@@ -14,8 +14,8 @@ jobs:
     - uses: azure/container-actions/docker-login@master
       with:
         login-server: registry.cn-hongkong.aliyuncs.com
-        username: ${{ secrets.ALIYUN_SHENZHEN_REGISTER_USERNAME }}
-        password: ${{ secrets.ALIYUN_SHENZHEN_REGISTER_PASSWORD }}
+        username: ${{ secrets.ALIYUN_DOCKER_REGISTER_USERNAME }}
+        password: ${{ secrets.ALIYUN_DOCKER_REGISTER_PASSWORD }}
 
     - name: Push the image to aliyun register
       run: echo ${GITHUB_REF}
