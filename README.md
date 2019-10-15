@@ -1,6 +1,6 @@
 # docker
 
-some public docker file
+维护我在阿里云的各种私有&共有镜像
 
 ## release
 
