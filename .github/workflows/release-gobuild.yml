@@ -1,9 +1,9 @@
-name: release
+name: release-gobuild
 
 on:
   push:
-    branches:
-      - 'feature/release-*'
+    tags:
+      - 'release-gobuild-v*'
 
 jobs:
   release:
@@ -18,5 +18,5 @@ jobs:
         password: ${{ secrets.ALIYUN_DOCKER_REGISTER_PASSWORD }}
 
     - name: Push the image to aliyun register
-      run: make ${GITHUB_REF:27}
+      run: make gobuild
 
