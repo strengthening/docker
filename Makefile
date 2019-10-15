@@ -7,5 +7,5 @@ alpine:
 	docker push registry.cn-hongkong.aliyuncs.com/ghostex/alpine
 
 gobuild:
-	cd gobuild/1 && docker build --rm -t registry.cn-hongkong.aliyuncs.com/strengthening/gobuild .
+	cd gobuild && docker build --rm -t registry.cn-hongkong.aliyuncs.com/strengthening/gobuild .
 	docker push registry.cn-hongkong.aliyuncs.com/strengthening/gobuild
