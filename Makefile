@@ -1,4 +1,4 @@
-.PHONY:alpine
+.PHONY:alpine gobuild
 
 alpine:
 	cd alpine/3 && docker build --rm -t registry.cn-hongkong.aliyuncs.com/ghostex/alpine:3 .
