@@ -7,3 +7,5 @@ RUN go get github.com/google/uuid
 RUN go get github.com/go-sql-driver/mysql
 
 COPY --from=registry.cn-hongkong.aliyuncs.com/strengthening/gobase:latest /go/src/github.com/strengthening/gobase /go/src/github.com/strengthening/gobase
+COPY --from=registry.cn-hongkong.aliyuncs.com/strengthening/goghostex:latest /go/src/github.com/strengthening/goghostex /go/src/github.com/strengthening/goghostex
+
