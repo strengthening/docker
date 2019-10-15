@@ -22,3 +22,11 @@
 1. gobuild. 打 release-alpine-v* 形式的tag发布对应的包
 1. pybase. 打 release-pybase-v* 形式的tag发布对应的包
 1. exec. 打 release-exec-v* 形式的tag发布对应的包
+
+## 维护新docker项目步骤
+
+1. 创建新的文件夹。编写对应的Dockerfile。
+1. 在Makefile中编写对应的make命令。
+1. 在阿里云镜像服务中建立对应的项目。
+1. 在.github/workflows文件夹中创建对应项目release配置文件。
+
