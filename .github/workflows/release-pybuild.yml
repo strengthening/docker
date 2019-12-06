@@ -1,9 +1,9 @@
-name: release-pybase
+name: release-pybuild
 
 on:
   push:
     tags:
-      - 'release-pybase-v*'
+      - 'release-pybuild-v*'
 
 jobs:
   release:
@@ -18,7 +18,7 @@ jobs:
         password: ${{ secrets.ALIYUN_DOCKER_REGISTER_PASSWORD }}
 
     - name: Push the image to aliyun register
-      run: make pybase
+      run: make pybuild
 
 
 

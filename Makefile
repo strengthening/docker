@@ -1,8 +1,12 @@
-.PHONY:pybase gobuild exec
+.PHONY:pybase pybuild gobuild exec
 
 pybase:
 	cd pybase && docker build --rm -t registry.cn-hongkong.aliyuncs.com/strengthening/pybase .
 	docker push registry.cn-hongkong.aliyuncs.com/strengthening/pybase
+
+pybuild:
+	cd pybuild && docker build --rm -t registry.cn-hongkong.aliyuncs.com/strengthening/pybuild .
+	docker push registry.cn-hongkong.aliyuncs.com/strengthening/pybuild
 
 gobuild:
 	cd gobuild && docker build --rm -t registry.cn-hongkong.aliyuncs.com/strengthening/gobuild .
