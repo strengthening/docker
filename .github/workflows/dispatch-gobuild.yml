@@ -3,7 +3,7 @@ on:
   repository_dispatch:
     types: [gobuild]
 jobs:
-  pybuild:
+  gobuild:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
