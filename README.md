@@ -5,7 +5,7 @@
 
 ## 镜像类别
 
-1. 基础包镜像，被别的项目引用的项目。比如：`pyanalysis` `pyghostbt` `goghostex` `gobase`。Action发布流程通过格式检测、编译等流程过后。将代码复制到对应项目的docker中。这个docker镜像仅仅用来被其他项目COPY代码使用。
+1. 基础包镜像，被别的项目引用的项目。比如：`pyanalysis` `pyghostbt` `goghostex` `gobase`。Action发布流程通过格式检测、编译、分发等流程过后。将代码复制到对应项目的docker中。这个docker镜像仅仅用来被其他项目COPY代码使用，并触发对应的依赖环境的最新docker版本。
 1. 线上服务镜像，需要上线的项目。将项目源代码/编译后可执行文件复制到对应的基础镜像中。并提供服务启动的`CMD` 或者 `ENTRYPOINT`
 1. 编译/依赖环境的镜像，比如：`gobuild` `pybuild`。镜像中存放着所有依赖项目的代码。
 1. 可执行文件的镜像，比如：`exec`。
