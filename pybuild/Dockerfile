@@ -1,5 +1,10 @@
-FROM python:3.6-slim
+FROM python:3.6-alpine
 
+COPY ta-lib-0.4.0-src.tar.gz .
+RUN apk --update add gcc make g++ zlib-dev
+RUN tar -zxvf ta-lib-0.4.0-src.tar.gz && cd ta-lib && ./configure --prefix=/usr && make && make install
+
+RUN pip3 install TA-Lib==0.4.17
 RUN pip3 install arrow==0.15.1
 RUN pip3 install PyMySQL==0.9.3
 RUN pip3 install Flask==1.1.1
