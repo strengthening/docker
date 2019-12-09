@@ -1,7 +1,13 @@
 FROM python:3.6-alpine
 
+RUN apk add --no-cache curl
+RUN apk add --no-cache ca-certificates
+RUN apk add --no-cache libc6-compat
+RUN apk add --update tzdata
+RUN apk add --update gcc make g++ zlib-dev
+RUN update-ca-certificates
+
 COPY ta-lib-0.4.0-src.tar.gz .
-RUN apk --update add gcc make g++ zlib-dev
 RUN tar -zxvf ta-lib-0.4.0-src.tar.gz && cd ta-lib && ./configure --prefix=/usr && make && make install
 
 RUN pip3 install numpy==1.17.4
