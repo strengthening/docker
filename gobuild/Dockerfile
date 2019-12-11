@@ -1,4 +1,4 @@
-FROM golang:1.12-buster
+FROM golang:1.12-stretch
 
 # The default GOPATH is /go
 
