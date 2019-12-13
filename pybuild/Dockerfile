@@ -1,4 +1,4 @@
-FROM python:3.6-alpine
+FROM python:3.7-alpine
 
 RUN apk add --no-cache curl
 RUN apk add --no-cache ca-certificates
