@@ -8,7 +8,7 @@ RUN apk add --update gcc make g++ zlib-dev
 RUN update-ca-certificates
 
 COPY ta-lib-0.4.0-src.tar.gz .
-RUN tar -zxvf ta-lib-0.4.0-src.tar.gz && cd ta-lib && ./configure --prefix=/usr && make && make install
+RUN tar -zxvf ta-lib-0.4.0-src.tar.gz && cd ta-lib && ./configure --prefix=/usr -q && make --quiet && make install --quiet
 
 RUN pip3 install numpy==1.17.4
 RUN pip3 install TA-Lib==0.4.17
