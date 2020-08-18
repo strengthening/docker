@@ -10,3 +10,6 @@ COPY --from=registry.cn-hongkong.aliyuncs.com/strengthening/gobase:latest /go/sr
 COPY --from=registry.cn-hongkong.aliyuncs.com/strengthening/goghostex:latest /go/src/github.com/strengthening/goghostex /go/src/github.com/strengthening/goghostex
 COPY --from=registry.cn-hongkong.aliyuncs.com/strengthening/cryptofinance:latest /go/src/github.com/strengthening/cryptofinance /go/src/github.com/strengthening/cryptofinance
 
+RUN pwd
+RUN cd /go/src/github.com/strengthening/goghostex/goghostex && go build && mv goghostex ~
+
