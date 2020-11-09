@@ -17,6 +17,12 @@ jobs:
         username: ${{ secrets.ALIYUN_DOCKER_REGISTER_USERNAME }}
         password: ${{ secrets.ALIYUN_DOCKER_REGISTER_PASSWORD }}
 
+    - uses: azure/docker-login@v1
+      with:
+        login-server: registry.cn-hangzhou.aliyuncs.com
+        username: ${{ secrets.ALIYUN_DOCKER_REGISTER_USERNAME }}
+        password: ${{ secrets.ALIYUN_DOCKER_REGISTER_PASSWORD }}
+
     - name: Push the image to aliyun register
       run: make pybuild
 
