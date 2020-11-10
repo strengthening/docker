@@ -7,10 +7,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Login the Docker service
+
+      - name: Login the hongkong Docker service
         uses: azure/docker-login@v1
         with:
           login-server: registry.cn-hongkong.aliyuncs.com
           username: ${{ secrets.ALIYUN_DOCKER_REGISTER_USERNAME }}
           password: ${{ secrets.ALIYUN_DOCKER_REGISTER_PASSWORD }}
       - run: make pybuild
+
+      - name: Login hangzhou docker register
+        uses: azure/docker-login@v1
+        with:
+          login-server: registry.cn-hangzhou.aliyuncs.com
+          username: ${{ secrets.ALIYUN_DOCKER_REGISTER_USERNAME }}
+          password: ${{ secrets.ALIYUN_DOCKER_REGISTER_PASSWORD }}
+
+      - name: Push the image to hangzhou aliyun register
+        run: |
+          docker tag registry.cn-hongkong.aliyuncs.com/strengthening/pybuild registry.cn-hangzhou.aliyuncs.com/strengthening/pybuild
+          docker push registry.cn-hangzhou.aliyuncs.com/strengthening/pybuild
