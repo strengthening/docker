@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Login the hongkong Docker service
+      - name: Login the hongkong docker service
         uses: azure/docker-login@v1
         with:
           login-server: registry.cn-hongkong.aliyuncs.com
@@ -16,7 +16,7 @@ jobs:
           password: ${{ secrets.ALIYUN_DOCKER_REGISTER_PASSWORD }}
       - run: make pybuild
 
-      - name: Login hangzhou docker register
+      - name: Login the hangzhou docker register
         uses: azure/docker-login@v1
         with:
           login-server: registry.cn-hangzhou.aliyuncs.com
