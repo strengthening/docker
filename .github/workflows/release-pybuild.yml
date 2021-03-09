@@ -21,11 +21,6 @@ jobs:
     - name: Push the image to hongkong aliyun register
       run: make pybuild
 
-    - name: Push the buster image to hongkong aliyun register
-      run: |
-        cd pybuild && docker build --rm -t registry.cn-hongkong.aliyuncs.com/strengthening/pybuild:buster -f Dockerfile_buster .
-        docker push registry.cn-hongkong.aliyuncs.com/strengthening/pybuild:buster
-        
     - name: Login hangzhou docker register
       uses: azure/docker-login@v1
       with:
@@ -37,5 +32,4 @@ jobs:
       run: |
         docker tag registry.cn-hongkong.aliyuncs.com/strengthening/pybuild registry.cn-hangzhou.aliyuncs.com/strengthening/pybuild
         docker push registry.cn-hangzhou.aliyuncs.com/strengthening/pybuild
-        docker tag registry.cn-hongkong.aliyuncs.com/strengthening/pybuild:buster registry.cn-hangzhou.aliyuncs.com/strengthening/pybuild:buster
-        docker push registry.cn-hangzhou.aliyuncs.com/strengthening/pybuild:buster
+
