@@ -1,4 +1,4 @@
-ROM golang:1.13-stretch
+FROM golang:1.13-stretch
 
 # The default GOPATH is /go
 
