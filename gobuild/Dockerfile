@@ -11,5 +11,6 @@ COPY --from=registry.cn-hongkong.aliyuncs.com/strengthening/goghostex:latest /go
 
 # remove cause it report a bug, the command just prepare build not build directly.
 # RUN cd /go/src/github.com/strengthening/goghostex && go build -n ./goghostex/...
+
 RUN cd /go/src/github.com/strengthening/goghostex && go install ./goghostex/...
 
