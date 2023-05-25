@@ -1,4 +1,4 @@
-FROM python:3.8-buster
+FROM python:3.9-buster
 
 COPY ta-lib-0.4.0-src.tar.gz .
 RUN tar -zxvf ta-lib-0.4.0-src.tar.gz && cd ta-lib && ./configure --prefix=/usr -q && make --quiet && make install --quiet
