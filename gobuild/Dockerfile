@@ -2,7 +2,7 @@ FROM golang:1.13-stretch
 
 # The default GOPATH is /go
 
-RUN go get github.com/gorilla/websocket@v1.4.0
+RUN go get github.com/gorilla/websocket@v1.4.2
 RUN go get github.com/google/uuid
 RUN go get github.com/go-sql-driver/mysql
 
