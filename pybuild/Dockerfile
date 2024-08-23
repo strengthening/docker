@@ -7,6 +7,7 @@ RUN pip3 install numpy==1.17.4
 RUN pip3 install TA-Lib==0.4.17
 RUN pip3 install arrow==0.17.0
 RUN pip3 install PyMySQL==0.9.3
+RUN pip3 install Werkzeug==2.2.2
 RUN pip3 install Flask==2.0.3
 RUN pip3 install gevent==21.12.0
 RUN pip3 install python-dotenv==0.10.1
